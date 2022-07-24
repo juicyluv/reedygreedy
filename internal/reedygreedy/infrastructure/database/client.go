@@ -3,11 +3,11 @@ package database
 import (
 	"github.com/juicyluv/reedygreedy/internal/reedygreedy/infrastructure/configuration"
 	"github.com/juicyluv/rgdb/pkg/rgdb"
-	"go.uber.org/zap"
+	"github.com/juicyluv/rgutils/pkg/logger"
 	"strconv"
 )
 
-func New(logger *zap.Logger, cfg configuration.Interface) (*rgdb.Client, error) {
+func New(logger *logger.Logger, cfg configuration.Interface) (*rgdb.Client, error) {
 	client, err := rgdb.New(logger, &rgdb.Config{
 		ConnString: cfg.GetDatabaseConnString(),
 		Host:       cfg.GetDatabaseHost(),
