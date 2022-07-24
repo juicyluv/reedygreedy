@@ -2,8 +2,8 @@ package reedygreedy
 
 import (
 	"github.com/juicyluv/reedygreedy/internal/reedygreedy/infrastructure/configuration"
+	"github.com/juicyluv/rgutils/pkg/logger"
 	"github.com/kardianos/service"
-	"go.uber.org/zap"
 )
 
 type App interface {
@@ -11,9 +11,9 @@ type App interface {
 
 	Service() service.Service
 
-	GetLogger() *zap.Logger
+	GetLogger() *logger.Logger
 
-	SetLogger(logger *zap.Logger)
+	SetLogger(logger *logger.Logger)
 
 	GetConfiguration() configuration.Interface
 
